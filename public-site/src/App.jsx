@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PublicProjectList from './components/PublicProjectList'
 
 
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <div>
       <h1>My Portfolio</h1>
+      <PublicProjectList />
     </div>
   )
 }

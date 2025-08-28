@@ -22,6 +22,7 @@ public class ProjectsController : ControllerBase
 
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
     {
         var projects = await _context.Projects.ToListAsync();
@@ -29,6 +30,7 @@ public class ProjectsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<Project>> GetProject(int id)
     {
         var project = await _context.Projects.FindAsync(id);
