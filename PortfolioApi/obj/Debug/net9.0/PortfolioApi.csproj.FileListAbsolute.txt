@@ -162,3 +162,4 @@
 /home/tbclawson/Documents/Projects/PortfolioHost/PortfolioApi/obj/Debug/net9.0/PortfolioApi.pdb
 /home/tbclawson/Documents/Projects/PortfolioHost/PortfolioApi/obj/Debug/net9.0/PortfolioApi.genruntimeconfig.cache
 /home/tbclawson/Documents/Projects/PortfolioHost/PortfolioApi/obj/Debug/net9.0/ref/PortfolioApi.dll
+/home/tbclawson/Documents/Projects/PortfolioHost/PortfolioApi/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

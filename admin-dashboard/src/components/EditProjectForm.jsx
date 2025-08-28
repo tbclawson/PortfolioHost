@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 
 function EditProjectForm({ project, onProjectUpdated, onCancel }) {
   const [formData, setFormData] = useState({ ...project });
@@ -19,7 +19,7 @@ function EditProjectForm({ project, onProjectUpdated, onCancel }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5098/api/Projects/${project.id}`, formData);
+      await api.put(`http://localhost:5098/api/Projects/${project.id}`, formData);
       onProjectUpdated(formData);
     } catch (err) {
       console.error('Failed to update project', err);

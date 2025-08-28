@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 
 function AddProjectForm({ onProjectAdded }) {
   const [title, setTitle] = useState('');
@@ -21,7 +21,7 @@ function AddProjectForm({ onProjectAdded }) {
     };
 
     try {
-      const response = await axios.post('http://localhost:5098/api/Projects', newProject);
+      const response = await api.post('http://localhost:5098/api/Projects', newProject);
       onProjectAdded(response.data); // Notify the parent component
       // Clear the form
       setTitle('');
