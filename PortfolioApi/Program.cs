@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using PortfolioApi.Data;
 
-DotNetEnv.Env.Load("../env/.env");
 
 var builder = WebApplication.CreateBuilder(args);
 

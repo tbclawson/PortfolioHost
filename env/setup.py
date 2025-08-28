@@ -32,11 +32,11 @@ def setup_environment():
         password = getpass.getpass("DB Password: ")
         
         with open(dotenv_path, "w") as f:
-            f.write(f"DB_PASSWORD={password}\n")
-            f.write(f"CWD={project_directory}\n")
+            f.write(f"DB_PASSWORD='{password}'\n")
         print(f"Successfully created '{ENV_FILE}'.")
     else:
         print(f"Found existing '{ENV_FILE}'.")
+
 
 def run_docker_compose():
     """Runs 'docker-compose up -d' to start the services."""

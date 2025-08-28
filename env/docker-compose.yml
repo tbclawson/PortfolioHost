@@ -1,14 +1,16 @@
 services:
   db:
       image: mcr.microsoft.com/mssql/server:latest
-      container_name: sql-server
+      container_name: mssql-server
       environment:
-        ACCEPT_EULA: 'Y'
-        SA_PASSWORD: $DB_PASSWORD
+        ACCEPT_EULA: "Y"
+        SA_PASSWORD: "${DB_PASSWORD}"
+        MSSQL_PID: "Developer"
       ports:
         - "1433:1433"
       volumes:
-        - sql-server-data:$CWD/data/mssql
+        - sql-server-data:/var/opt/mssql
+      # command: sh -c "echo 'DB_PASSWORD ${DB_PASSWORD}'"
 
 volumes:
   sql-server-data:
