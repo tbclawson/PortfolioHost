@@ -1,4 +1,24 @@
+
+using Microsoft.EntityFrameworkCore;
+using PortfolioApi.Data;
+
+DotNetEnv.Env.Load("../env/.env");
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+// ==> ADD THESE LINES STARTING HERE <==
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<DataContext>(options => 
+    options.UseSqlServer(connectionString));
+// ==> END OF LINES TO ADD <==
+
+
+builder.Services.AddControllers();
+
+
+// var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
