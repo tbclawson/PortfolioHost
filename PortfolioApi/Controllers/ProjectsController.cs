@@ -10,10 +10,12 @@ namespace PortfolioApi.Controllers;
 public class ProjectsController : ControllerBase
 {
     private readonly DataContext _context;
+    private readonly ILogger<ProjectsController> _logger;
 
-    public ProjectsController(DataContext context)
+    public ProjectsController(DataContext context, ILogger<ProjectsController> logger)
     {
         _context = context;
+        _logger = logger;
     }
 
 
