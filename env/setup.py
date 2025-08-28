@@ -9,10 +9,20 @@ DOCKER_COMPOSE = "docker-compose.yml"
 current_file_path = os.path.abspath(__file__)
 current_file_directory = os.path.dirname(current_file_path)
 project_directory = os.path.dirname(current_file_directory)
+data_directory_path = Path(f'{project_directory}/data')
 dotenv_path = Path(f'{current_file_directory}/{ENV_FILE}')
 docker_compose_path = f'{current_file_directory}/{DOCKER_COMPOSE}'
 
 def setup_environment():
+    """Checks for data directory and creates it if it doesn't exist."""
+    if not data_directory_path.exists():
+        print("Making data directory at:")
+        print(data_directory_path)
+        os.mkdir(data_directory_path)
+
+
+
+
     """Checks for .env file and creates it if it doesn't exist."""
     if not dotenv_path.exists():
         print(f"'{ENV_FILE}' not found.")
