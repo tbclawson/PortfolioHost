@@ -1,10 +1,17 @@
-import { useState } from 'react'
-import { AppBar, Avatar, Typography, Stack, Toolbar, Button } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+import { AppBar, Avatar, Typography, Toolbar, Button } from "@mui/material";
 import {PersonOutline} from "@mui/icons-material";
 
 
 
-function CustomAppBar({goToAbout}) {
+function CustomAppBar() {
+
+    const navigate = useNavigate();
+
+    const goToAbout = () => {
+        navigate('/about');
+    };
+
     return (
         <AppBar
             position="static"
