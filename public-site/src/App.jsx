@@ -1,26 +1,22 @@
-import { useState } from 'react'
-import PublicProjectList from './components/PublicProjectList'
-import { Container, Typography } from '@mui/material'
-import CustomAppBar from './components/AppBar';
+import { React, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
 
 
 
 function App() {
 
   return (
-    <div>
-      <CustomAppBar></CustomAppBar>
-      <Container
-        sx = {{
-          
-        }}
-        maxWidth="xl"
-      >
-        <Typography variant='h3' align='center'>My Portfolio</Typography>
-        <PublicProjectList />
-      </Container>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path = "/" element={<Home />} />
+        <Route path = "/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+  
+  
 }
 
 export default App

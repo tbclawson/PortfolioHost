@@ -1,9 +1,10 @@
+import { useState } from 'react'
 import { AppBar, Avatar, Typography, Stack, Toolbar, Button } from "@mui/material";
 import {PersonOutline} from "@mui/icons-material";
 
 
 
-function CustomAppBar({project}) {
+function CustomAppBar({goToAbout}) {
     return (
         <AppBar
             position="static"
@@ -21,7 +22,7 @@ function CustomAppBar({project}) {
                     Trevor Clawson
                 </Typography>
                 <Button sx={{ color: 'text.primary' }}>Home</Button>
-                <Button sx={{ color: 'text.primary' }}>About</Button>
+                <Button sx={{ color: 'text.primary' }} onClick={goToAbout}>About</Button>
                 <Button sx={{ color: 'text.primary' }}>Contact</Button>
             </Toolbar>
             
