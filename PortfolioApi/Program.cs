@@ -19,7 +19,8 @@ builder.Services.AddCors(options =>
                       policy =>
                       {
                           policy.WithOrigins("http://localhost:5173",
-                                                "http://localhost:5174") // Your React app's URL
+                                                "http://localhost:5174",
+                                                "http://192.168.50.200:5173") // Your React app's URL
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
                       });

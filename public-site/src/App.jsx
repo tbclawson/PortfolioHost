@@ -1,15 +1,24 @@
 import { useState } from 'react'
 import PublicProjectList from './components/PublicProjectList'
+import { Container, Typography } from '@mui/material'
+import CustomAppBar from './components/AppBar';
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
-      <h1>My Portfolio</h1>
-      <PublicProjectList />
+      <CustomAppBar></CustomAppBar>
+      <Container
+        sx = {{
+          
+        }}
+        maxWidth="xl"
+      >
+        <Typography variant='h3' align='center'>My Portfolio</Typography>
+        <PublicProjectList />
+      </Container>
     </div>
   )
 }
