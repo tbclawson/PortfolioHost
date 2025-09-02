@@ -55,7 +55,7 @@ The public-facing website was created as a new, separate React application. This
 This project provides a solid foundation that can be extended with more advanced features to further demonstrate enterprise-level development practices.
 
 ### Front-End Experience
-- **Component Library & UI Styling:** Create a dedicated component library with a consistent design system (e.g., using Tailwind CSS or Material-UI) to improve the look and feel of both the admin dashboard and the public site.
+- **Component Library & UI Styling:** Create a dedicated component library with a consistent design system using Material-UI to improve the look and feel of both the admin dashboard and the public site.
 - **State Management:** For the admin dashboard, implement a state management library like Redux or Zustand. This will make the application's state more predictable and easier to manage as more features are added.
 - **User Experience (UX) Enhancements:** Add features like loading spinners for API requests, toast notifications for success or error messages, and form validation to provide a smoother user experience.
 
