@@ -10,11 +10,23 @@ import {
   CircularProgress,
   Box,
   Stack,
+  CardActionArea,
 } from '@mui/material';
+import { href } from 'react-router-dom';
 
 
 
 function ProjectCard({ project }) {
+
+  const linkProps = project.githubUrl 
+    ? {
+      component: 'a',
+      href: project.githubUrl,
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    }
+  : {};
+
   return (
     <Card
       sx={{
@@ -29,21 +41,23 @@ function ProjectCard({ project }) {
         },
       }}
     >
-      <CardMedia
-        component="img"
-        height="160"
-        // Use the imageUrl from the project data
-        image={'../../public/images.png' || project.imageUrl}
-        alt={`Screenshot of ${project.title}`}
-      />
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography gutterBottom align="center" variant="h5">
-          {project.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {project.description}
-        </Typography>
-      </CardContent>
+      <CardActionArea {...linkProps}>
+        <CardMedia
+          component="img"
+          height="160"
+          // Use the imageUrl from the project data
+          image={'/images.png' || project.imageUrl}
+          alt={`Screenshot of ${project.title}`}
+        />
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography gutterBottom align="center" variant="h5">
+            {project.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {project.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 };

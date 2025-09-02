@@ -32,7 +32,12 @@ function PublicProjectList({ projects, loading, error }) {
 
 
   return (
-    <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
+    <Box 
+      marginBottom={10}
+      sx={{ 
+        p: { xs: 2, sm: 3, md: 4 }, 
+        
+      }}>
       <Grid container spacing={4}>
         {projects.map((project) => (
           // FIXED: Grid props are now correct ('item', 'xs', 'sm', 'md')

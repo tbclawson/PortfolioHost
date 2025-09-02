@@ -18,7 +18,7 @@ function CustomAppBar() {
 
     return (
         <AppBar
-            position="static"
+            position="absolute"
             sx = {{
                 background: 'transparent',
                 boxShadow: 'none',
@@ -29,11 +29,11 @@ function CustomAppBar() {
                 <Avatar sx={{m:1}}>
                     <PersonOutline></PersonOutline>
                 </Avatar>
-                <Button onClick={goHome}>
+                {/* <Button onClick={goHome}>
                     <Typography variant="h5" component="span" sx={{ flexGrow: 1, color: 'text.primary', fontWeight: 'bold'}}>
                         Trevor Clawson
                     </Typography>
-                </Button>
+                </Button> */}
                 <Box
                     sx={{flexGrow:1}}
                 ></Box>
