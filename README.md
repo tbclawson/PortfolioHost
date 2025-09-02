@@ -12,6 +12,14 @@ The architecture is a **headless CMS**. The .NET back-end serves as the "head," 
 - **React Public Site:** A fast, public-facing website that fetches and displays the portfolio content for visitors.
 
 ---
+## Screenshots
+
+Here are a few screenshots of the public-facing portfolio website.
+
+![Portfolio Screenshot 1](./images/Portfolio-Hook.png)
+![Portfolio Screenshot 2](./images/Portfolio-Projects.png)
+![Portfolio Screenshot 3](./images/Portfolio-About.png)
+
 ## Design Choices & Technologies
 
 This project was designed to demonstrate a modern, full-stack skillset, touching on technologies and practices common in enterprise software development.
