@@ -17,6 +17,8 @@ function ProjectList({ projects, onProjectDeleted, onEditProject }) {
             <li key={project.id}>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+              <p>{project.projectUrl}</p>
+              <p>{project.githubUrl}</p>
               {/* Add the edit button */}
               <button onClick={() => onEditProject(project)}>
                 Edit

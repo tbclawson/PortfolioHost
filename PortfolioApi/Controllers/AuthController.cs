@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PortfolioApi.Controllers
 {
@@ -71,6 +72,12 @@ namespace PortfolioApi.Controllers
             string token = CreateToken(user);
 
             return Ok(token);
+        }
+
+        [HttpGet("verify"), Authorize]
+        public IActionResult VerifyToken()
+        {
+            return Ok();
         }
 
 

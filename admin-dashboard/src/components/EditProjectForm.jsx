@@ -46,7 +46,24 @@ function EditProjectForm({ project, onProjectUpdated, onCancel }) {
           onChange={handleChange}
         />
       </div>
-      {/* Add other fields like projectUrl, githubUrl here */}
+      <div>
+        <label>Project URL:</label>
+        <input 
+          type="text" 
+          name="projectUrl"
+          value={formData.projectUrl} 
+          onChange={handleChange} 
+        />
+      </div>
+      <div>
+        <label>GitHub URL:</label>
+        <input 
+          type="text" 
+          name="githubUrl"
+          value={formData.githubUrl} 
+          onChange={handleChange} 
+        />
+      </div>
       <button type="submit">Save Changes</button>
       <button type="button" onClick={onCancel}>Cancel</button>
     </form>

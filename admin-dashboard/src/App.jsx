@@ -8,8 +8,33 @@ import LoginPage from './components/LoginPage';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
+  const [isTokenValidated, setTokenValidated] = useState(false);
   const [projects, setProjects] = useState([]);
   const [editingProject, setEditingProject] = useState(null);
+  const [error, setError] = useState(false);
+
+
+  useEffect(() => {
+    const verifyToken = async () => {
+      const existingToken = localStorage.getItem('token');
+      if (existingToken) {
+        try {
+          await api.get('/Auth/verify', { timeout: 5000 });
+          setToken(existingToken); // Token is valid
+        } catch (error) {
+          if (error.code === 'ECONNABORTED') {
+            console.error('Request timed out');
+            setError(true);
+          }
+          setTimeout(handleLogout(), 3000);
+          // Token is invalid or expired
+          
+        }
+      }
+      setTokenValidated(true); // Mark validation as complete
+    };
+    verifyToken();
+  }, []);
 
 
   // Fetch projects when the app loads
@@ -37,10 +62,19 @@ function App() {
 
   const handleLogout = () => {
     setToken(null);
+    localStorage.removeItem('token')
+  }
+
+  if (!isTokenValidated) {
+    return <div>Loading...</div>
   }
 
   if (!token) {
     return <LoginPage onLoginSuccess={handleLoginSuccess} />;
+  }
+
+  if (error) {
+    return <div>Timeout error.</div>
   }
 
 
