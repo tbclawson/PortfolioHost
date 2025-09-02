@@ -25,29 +25,38 @@ function Home({ projects, loading, error }) {
                             justifyContent: 'center'
                         }}
                     >
-                        <Typography
-                            variant='h3'
-                            // align='center'
-                            sx={{
-                                // mt:
-                            }}
-                        >
-                            Hi, I'm Trevor!
-                        </Typography>
                         <Box
-                            width={300}           
                             sx={{
-                                marginTop:4,
-                                p:2
+                                display:'flex',
+                                flexDirection:'column',
+                                alignItems:'center',
+                                justifyContent: 'center'
                             }}
                         >
                             <Typography
-                                variant='body1'
-                                // component='paragraph'
+                                variant='h3'
+                                // align='center'
+                                sx={{
+                                    // mt:
+                                }}
                             >
-                                I build things. From scalable data pipelines to user-friendly mobile apps, 
-                                I thrive on turning interesting ideas into tangible, software-driven realities.
+                                Hi, I'm Trevor!
                             </Typography>
+                            <Box
+                                width={300}           
+                                sx={{
+                                    marginTop:4,
+                                    p:2
+                                }}
+                            >
+                                <Typography
+                                    variant='body1'
+                                    // component='paragraph'
+                                >
+                                    I build things. From scalable data pipelines to user-friendly mobile apps, 
+                                    I thrive on turning interesting ideas into tangible, software-driven realities.
+                                </Typography>
+                            </Box>
                         </Box>
                         
                     </Box>

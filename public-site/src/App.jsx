@@ -39,10 +39,10 @@ function App() {
 
   return (
     <Router>
-      <CustomAppBar></CustomAppBar>
+      {/* <CustomAppBar></CustomAppBar> */}
       <Routes>
         <Route path = "/" element={<Home projects={projects} loading={loading} error={error}/>} />
-        <Route path = "/about" element={<About />} />
+        {/* <Route path = "/about" element={<About />} /> */}
       </Routes>
     </Router>
   );
